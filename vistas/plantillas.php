@@ -51,19 +51,19 @@ switch($ruta[0]){
      include "admin/menu.php";
      include "admin/menu_lateral.php";
      include $vista;  
-     brake;
+     break;
      
      case "usuario": 
      include "alumno/menu.php";
       include "alumno/menu_lateral.php";
       include $vista;
-      brake;
+     break;
       
       case "biblioteca": 
       include "biblioteca/menu.php";
       include "biblioteca/menu_lateral.php";
       include $vista;
-      brake;
+     break;
 }
 
       ?>
