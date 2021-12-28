@@ -1,3 +1,6 @@
+<!-- nota las carpetas de js y css que estna afuera son los archivos de este estilo -->
+
+
 <?php
 if(isset($_POST["ok1"])){
 	//informacion para conectarse con la base de datos
@@ -60,43 +63,84 @@ if(isset($_POST["ok1"])){
 }
 ?>
  <!-- Bootstrap CSS -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+   
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	
     <title>Instalcion De Base </title>
+
+	<script type="text/javascript">
+
+function toas() {
+  
+  var toastTrigger = document.getElementById('liveToastBtn')
+  var toastLiveExample = document.getElementById('liveToast')
+
+	  var toast = new bootstrap.Toast(toastLiveExample)
+	  
+	  toast.show()
+
+}
+
+  
+
+</script>
+
+	
+
   </head>
   <body>
 	  
 
 	<div class="container-fluid">
-		<br>
-		<br>
-		<div class="row m-5 shadow-lg">
+		<div class="row m-5">
 			<div class="row align-items-center">
-			<div class="col-6 p-2 offset-3">
+			<div class="col-8 p-2 offset-2">
+				
 				
 				<div class="col-10 offset-1 p-2 ">
-				<br>
-					<br>
-				<h1 class="display-3 lead text-center">INTALACION DE BASE DATOS</h1>
+				<h1 class="display-3 lead text-center">INTALACION DE BASE DE DATOS</h1>
 			</div>
-			<hr>
+			<!-- <hr> -->
 				
-				<div class="accordion accordion-flush" id="accordionFlushExample">
-					<div class="accordion-item">
-						<h2 class="accordion-header" id="flush-headingOne">
-							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-								Informacion Sobre Los Campos
-							</button>
-						</h2>
-						<br>
-						<div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-							<div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
-						</div>
+			<div class="col-12" >
+
+				<div class="card mb-3">
+				  <div class="row g-0 m-3">
+					<div class="col-md-2">
+					  <div id="list-example" class="list-group">
+						<a class="list-group-item list-group-item-action" href="#list-item-1">Servidor</a>
+						<a class="list-group-item list-group-item-action" href="#list-item-2">Base Datos</a>
+						<a class="list-group-item list-group-item-action" href="#list-item-3">Usuario</a>
+						<a class="list-group-item list-group-item-action" href="#list-item-4">Contrasena</a>
+					  </div>
 					</div>
+				   
 					
-					
+						<div data-spy="scroll" class="col-10 p-2 overflow-auto" style="height: 150px; " data-target="#list-example" data-offset="0" >
+							
+						  <h4 >Servidor</h4>
+						  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, culpa!
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, illum? Maiores accusantium nulla consequatur deleniti odio qui tempore iste esse.
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem provident expedita ex eos rem excepturi recusandae deserunt culpa veritatis non?
+						  </p>
+						  <h4 id="list-item-2">Base Datos</h4>
+						  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, culpa!
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, illum? Maiores accusantium nulla consequatur deleniti odio qui tempore iste esse.
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem provident expedita ex eos rem excepturi recusandae deserunt culpa veritatis non?</p>
+						  <h4 id="list-item-3">Usuario</h4>
+						  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, culpa!
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, illum? Maiores accusantium nulla consequatur deleniti odio qui tempore iste esse.
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem provident expedita ex eos rem excepturi recusandae deserunt culpa veritatis non?</p>
+						  <h4 id="list-item-4">Contrasena</h4>
+						  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, culpa!
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, illum? Maiores accusantium nulla consequatur deleniti odio qui tempore iste esse.
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem provident expedita ex eos rem excepturi recusandae deserunt culpa veritatis non?</p>
+						</div>
+					  
+				  
+				  </div>
 				</div>
-				
+			  </div>
                  
 				  <form method="post" class="row g-3">
 					<div class="col-6">
@@ -120,23 +164,44 @@ if(isset($_POST["ok1"])){
 					  </div>
 					
 					<div class="col-12 text-center">
-					  <button type="submit" name="ok1" class="btn btn-primary">Crear</button>
+						<button type="button" name="ok1" id="liveToastBtn" onclick="toas();" class="btn btn-primary">Crear</button>
+						</div>
+					</form>
 
-					</div>
-				  </form>
 
-				  <br>
-					<br>
+
+				 
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="..." class="rounded me-2" alt="...">
+      <strong class="me-auto">Bootstrap</strong>
+      <small>11 mins ago</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Hello, world! This is a toast message.
+    </div>
+  </div>
+</div>
+
+
+
+
 
 			</div>
 		
 		  </div>
 		</div>
 		</div>
-	
 	  </div>
 
 	  <script src="js/bootstrap.bundle.min.js"></script>
+	
+	
+
+	  <script src="js/jquery.slim.min.js"></script>
   
   </body>
 </html>

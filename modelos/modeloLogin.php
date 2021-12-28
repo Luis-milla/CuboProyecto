@@ -9,6 +9,7 @@ $sql->bindParam(":Correo",$datos['correo']);
 $sql->bindParam(":Clave",$datos['clave']); 
 $sql->execute();
 return $sql;
+
 }
     
 }
