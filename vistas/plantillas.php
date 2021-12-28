@@ -16,56 +16,44 @@
 
 <body>
 <?php 
-$peticionajax=false;
-require_once "./controladores/VistaControlador.php";
-$IV = new VistaControlador();
-$vista = $IV->obtener_vistas_controlador(); 
- 
-    //echo $vista;
-if($vista=="login" || $vista=="installer"){
-      
-switch($vista){
-
-case "installer": 
-     if(file_exists("./vistas/contenido/".$vista."-url.php")){
+    $peticionajax=false;
+    require_once "./controladores/VistaControlador.php";
+    $IV = new VistaControlador();
+    $vista = $IV->obtener_vistas_controlador(); 
+   
+    if($vista=="login" || $vista=="installer"){
        require_once "./vistas/contenido/".$vista."-url.php";
-      }else{
-           // $vista="login";
-       require_once "./vistas/contenido/login-url.php";
-          }
-          break;
-
-      case "login": require_once "./vistas/contenido/".$vista."-url.php"; break;
-      }
-      
-    ?>
+    
+		?>
   <div class="container-scroller">
-    
+	  
       <?php
-        }else{
-$ruta=explode("/",$_GET["url"]);
+      	}else{
+     $ruta=explode("/",$_GET["url"]);
 
-switch($ruta[0]){
-    
-    case "admin": 
+
+     if($ruta[0]=="admin"){
+     //ruta por defecto del menu admin
      include "admin/menu.php";
      include "admin/menu_lateral.php";
-     include $vista;  
-     brake;
-     
-     case "usuario": 
-     include "alumno/menu.php";
+     include $vista;
+
+
+     }elseif($ruta[0] == "usuario"){
+       
+      //ruta por defecto del menu admin
+      include "alumno/menu.php";
       include "alumno/menu_lateral.php";
       include $vista;
-      brake;
-      
-      case "biblioteca": 
+
+     }elseif($ruta[0] == "biblioteca"){
+        //ruta por defecto del menu admin
       include "biblioteca/menu.php";
       include "biblioteca/menu_lateral.php";
       include $vista;
-      brake;
-}
-
+     }
+     
+      
       ?>
       </div>
       <!-- main-panel ends -->
@@ -74,8 +62,14 @@ switch($ruta[0]){
   </div>
   <!-- container-scroller -->
 
+
+
+
+  
+  
+
   <?php
-  }
+	}
   include "inc/script.php" ?>
 </body>
 
