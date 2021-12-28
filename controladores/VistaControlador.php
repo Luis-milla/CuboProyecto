@@ -31,7 +31,16 @@ if(isset($_GET['url'])){
                   }
               
                   }else{
-                   $respuesta="login";
+
+                    switch($ruta[0]){
+                      case "installer": $respuesta="installer";
+                        break;
+
+                        default: $respuesta="login";
+                          break;
+                    }
+                    
+                  
                   }
 
 }else{
