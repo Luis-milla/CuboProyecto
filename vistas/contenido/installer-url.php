@@ -92,13 +92,13 @@ function toas() {
 	  
 
 	<div class="container-fluid">
-		<div class="row m-5">
+		<div class="row m-5 shadow-lg">
 			<div class="row align-items-center">
 			<div class="col-8 p-2 offset-2">
 				
 				
 				<div class="col-10 offset-1 p-2 ">
-				<h1 class="display-3 lead text-center">INTALACION DE BASE DE DATOS</h1>
+				<h1 class="display-4 lead text-center">INTALACION DE BASE DE DATOS</h1>
 			</div>
 			<!-- <hr> -->
 				
@@ -116,24 +116,29 @@ function toas() {
 					</div>
 				   
 					
-						<div data-spy="scroll" class="col-10 p-2 overflow-auto" style="height: 150px; " data-target="#list-example" data-offset="0" >
-							
-						  <h4 >Servidor</h4>
+						<div data-spy="scroll" class="col-10 p-2 overflow-auto" style="height: 150px; " data-target="#list-example"  >
+						  <h4 id="list-item-1">Servidor</h4>
 						  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, culpa!
 							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, illum? Maiores accusantium nulla consequatur deleniti odio qui tempore iste esse.
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem provident expedita ex eos rem excepturi recusandae deserunt culpa veritatis non?
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem provident expedita ex eos rem excepturi recusandae deserunt culpa veritatis non?
 							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem provident expedita ex eos rem excepturi recusandae deserunt culpa veritatis non?
 						  </p>
 						  <h4 id="list-item-2">Base Datos</h4>
 						  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, culpa!
 							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, illum? Maiores accusantium nulla consequatur deleniti odio qui tempore iste esse.
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem provident expedita ex eos rem excepturi recusandae deserunt culpa veritatis non?
 							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem provident expedita ex eos rem excepturi recusandae deserunt culpa veritatis non?</p>
 						  <h4 id="list-item-3">Usuario</h4>
 						  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, culpa!
 							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, illum? Maiores accusantium nulla consequatur deleniti odio qui tempore iste esse.
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem provident expedita ex eos rem excepturi recusandae deserunt culpa veritatis non?
 							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem provident expedita ex eos rem excepturi recusandae deserunt culpa veritatis non?</p>
 						  <h4 id="list-item-4">Contrasena</h4>
 						  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, culpa!
 							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, illum? Maiores accusantium nulla consequatur deleniti odio qui tempore iste esse.
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem provident expedita ex eos rem excepturi recusandae deserunt culpa veritatis non?
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem provident expedita ex eos rem excepturi recusandae deserunt culpa veritatis non?
 							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem provident expedita ex eos rem excepturi recusandae deserunt culpa veritatis non?</p>
 						</div>
 					  
@@ -142,7 +147,7 @@ function toas() {
 				</div>
 			  </div>
                  
-				  <form method="post" class="row g-3">
+				  <form method="post" class="row g-3 mb-4">
 					<div class="col-6">
 					  <label for="inputAddress" class="form-label">Servidor De Base De Datos</label>
 					  <input type="text" name="ip" class="form-control"  id="validationCustom01" placeholder="localhost" required>
