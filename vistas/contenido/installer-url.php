@@ -68,15 +68,11 @@ if(isset($_POST["ok1"])){
 	  
 
 	<div class="container-fluid">
-		<br>
-		<br>
-		<div class="row m-5 shadow-lg">
+		<div class="row m-5">
 			<div class="row align-items-center">
 			<div class="col-6 p-2 offset-3">
 				
 				<div class="col-10 offset-1 p-2 ">
-				<br>
-					<br>
 				<h1 class="display-3 lead text-center">INTALACION DE BASE DATOS</h1>
 			</div>
 			<hr>
@@ -88,7 +84,6 @@ if(isset($_POST["ok1"])){
 								Informacion Sobre Los Campos
 							</button>
 						</h2>
-						<br>
 						<div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
 							<div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
 						</div>
@@ -121,19 +116,16 @@ if(isset($_POST["ok1"])){
 					
 					<div class="col-12 text-center">
 					  <button type="submit" name="ok1" class="btn btn-primary">Crear</button>
-
 					</div>
 				  </form>
 
-				  <br>
-					<br>
+
 
 			</div>
 		
 		  </div>
 		</div>
 		</div>
-	
 	  </div>
 
 	  <script src="js/bootstrap.bundle.min.js"></script>
