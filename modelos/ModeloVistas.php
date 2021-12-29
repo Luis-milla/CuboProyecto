@@ -8,7 +8,7 @@ class ModeloVistas {
             //evaluar usuario para mostrar contenido
             if($tipo=="admin"){
 
-                $listaVistas=["home","lista-client","lista-usuario"];
+                $listaVistas=["home","usuario-add","lista-usuario"];
                 if(in_array($vistas,$listaVistas)){
                  $contenido='./vistas/admin/contenido/'.$vistas.'-url.php';
                    

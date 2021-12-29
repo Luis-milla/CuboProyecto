@@ -35,7 +35,7 @@ if(isset($_POST["ok1"])){
 	//*******IMPORTANTE*******// 
 	//en el archivo SQL no se debe de incluir las lineas para la
 	//creacion de la base de datos y el uso de esta.
-	$sql = explode(";",file_get_contents('biblioteca.sql'));//
+	$sql = explode(";",file_get_contents('basedebiblioteca.sql'));//
 	//recorremos el arreglo y ejecutamos cada sentencia SQL
 	foreach($sql as $query){
 		//mysqli_query($query,$link);
@@ -169,7 +169,7 @@ function toas() {
 					  </div>
 					
 					<div class="col-12 text-center">
-						<button type="button" name="ok1" id="liveToastBtn" onclick="toas();" class="btn btn-primary">Crear</button>
+						<button type="button" name="ok1" id="liveToastBtn"  class="btn btn-primary">Crear</button>
 						</div>
 					</form>
 

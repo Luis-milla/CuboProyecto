@@ -76,7 +76,9 @@ switch($ruta[0]){
 
   <?php
   }
-  include "inc/script.php" ?>
+  include "inc/footer.php";
+  include "inc/script.php"; ?>
+  
 </body>
 
 </html>
