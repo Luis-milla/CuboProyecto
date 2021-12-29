@@ -2,7 +2,8 @@
 <?php require_once "configuraciones/APP.php";?>
   
   <link rel="stylesheet" href="<?php echo SERVER_URL;?>vistas/paginas/css/vertical-layout-light/style.css">
-  <link rel="shortcut icon" href="<?php echo SERVER_URL;?>vistas/paginas/images/favicon.png" />
+  <link rel="shortcut icon" href="<?php echo SERVER_URL;?>imagenes/logo-Cubo.png" />
+  
   <link rel="stylesheet" href="<?php echo SERVER_URL;?>vistas/paginas/vendors/feather/feather.css">
   <link rel="stylesheet" href="<?php echo SERVER_URL;?>vistas/paginas/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="<?php echo SERVER_URL;?>vistas/paginas/vendors/ti-icons/css/themify-icons.css">

@@ -16,9 +16,11 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="<?php echo SERVER_URL; ?>admin/lista-client">Lista Administradores</a></li>
-                <li class="nav-item"> <a class="nav-link" href="<?php echo SERVER_URL; ?>admin/lista-usuario">Lista Usuario</a></li>
-                <li class="nav-item"> <a class="nav-link" href="<?php echo SERVER_URL; ?>admin/lista-client">Lista Bibliotecario</a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?php echo SERVER_URL; ?>admin/usuario-add">Agregar empleado</a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?php echo SERVER_URL; ?>admin/lista-usuario">Usuario</a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?php echo SERVER_URL; ?>admin/lista-client">Bibliotecario</a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?php echo SERVER_URL; ?>admin/lista-client">Administrador</a></li>
+                
               </ul>
             </div>
           </li>
