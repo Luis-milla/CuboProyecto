@@ -1,14 +1,12 @@
-<!-- nota las carpetas de js y css que estna afuera son los archivos de este estilo -->
-
-
 <?php
+
 if(isset($_POST["ok1"])){
 	//informacion para conectarse con la base de datos
 	
-	$ip=$_POST["ip"];
-	$usuario=$_POST["usuario"];
-	$clave=$_POST["clave"];
-	$base=$_POST["base"];
+	echo $ip=$_POST["ip"];
+	echo $usuario=$_POST["usuario"];
+	 $clave=$_POST["clave"];
+	echo $base=$_POST["base"];
 	
 	//conexion con el servidor MySQL 
 	$link = mysqli_connect($ip,$usuario,$clave);
@@ -35,7 +33,7 @@ if(isset($_POST["ok1"])){
 	//*******IMPORTANTE*******// 
 	//en el archivo SQL no se debe de incluir las lineas para la
 	//creacion de la base de datos y el uso de esta.
-	$sql = explode(";",file_get_contents('basedebiblioteca.sql'));//
+	$sql = explode(";",file_get_contents(SERVER_URL.'vistas/contenido/biblioteca.sql'));//
 	//recorremos el arreglo y ejecutamos cada sentencia SQL
 	foreach($sql as $query){
 		//mysqli_query($query,$link);
@@ -43,9 +41,12 @@ if(isset($_POST["ok1"])){
 			
 		}
 	}
-	
+
+	// echo $y=$link->query("SELECT table_name ,table_type
+	// FROM information_schema.`TABLES` WHERE TABLE_TYPE='BASE TABLE' && TABLE_SCHEMA = 'bibliotecanueva'");
+
 	//guardar la informacion en el archivo credenciales.php
-	$fp = fopen("XMLCARP"."/credenciales.php","w+"); //abrimos el archivo para escritura
+	$fp = fopen("XMLCARP/credenciales.php","w+"); //abrimos el archivo para escritura
 	
 	$contenido="<?php".PHP_EOL;
 	$contenido.="define(\"SERVIDOR\",\"$ip\");".PHP_EOL;
@@ -62,6 +63,8 @@ if(isset($_POST["ok1"])){
 	
 }
 ?>
+
+
  <!-- Bootstrap CSS -->
    
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -89,13 +92,15 @@ function toas() {
 
   </head>
   <body>
-	  
+	<img src="../contenido/XMLCARP/credenciales.php" alt="">  
 
 	<div class="container-fluid">
 		<div class="row m-5 shadow-lg">
 			<div class="row align-items-center">
 			<div class="col-8 p-2 offset-2">
-				
+				<?php
+                      echo __FILE__;
+				?>
 				
 				<div class="col-10 offset-1 p-2 ">
 				<h1 class="display-4 lead text-center">INTALACION DE BASE DE DATOS</h1>
@@ -169,7 +174,7 @@ function toas() {
 					  </div>
 					
 					<div class="col-12 text-center">
-						<button type="button" name="ok1" id="liveToastBtn"  class="btn btn-primary">Crear</button>
+						<button type="submit" name="ok1" id="liveToastBtn"  class="btn btn-primary">Crear</button>
 						</div>
 					</form>
 
