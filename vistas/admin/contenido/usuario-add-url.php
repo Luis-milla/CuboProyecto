@@ -2,6 +2,7 @@
 
 //require ('configuraciones/APP.php');
 ?>
+<script>
 <div class="main-panel">        
         <div class="content-wrapper">
           <div class="row">
