@@ -1,21 +1,15 @@
 <?php
 
-
-
 if(isset($_POST["ok1"])){
-	//informacion para conectarse con la base de datos
-	
 	 $ip=$_POST["ip"];
-	$usuario=$_POST["usuario"];
+	 $usuario=$_POST["usuario"];
 	 $clave=$_POST["clave"];
 	 $base=$_POST["base"];
 	
 	//conexion con el servidor MySQL 
-	$link = mysqli_connect($ip,$usuario,$clave);
+	@$link = mysqli_connect($ip,$usuario,$clave);
 	if (!$link) {
-		echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
-		echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
-		echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
+		echo "Error al instalar la base de datos";
 		exit;
 	}
 	
@@ -26,7 +20,7 @@ if(isset($_POST["ok1"])){
 	}
 
 	//seleccionamos la base  de datos
-	$link->select_db($base);
+	@$link->select_db($base);
 
 	//creamos un array con el contenido del archivo mibase.sql
 	//que tiene los comandos SQL para crear todas las tablas
@@ -35,7 +29,8 @@ if(isset($_POST["ok1"])){
 	//*******IMPORTANTE*******// 
 	//en el archivo SQL no se debe de incluir las lineas para la
 	//creacion de la base de datos y el uso de esta.
-	$sql = explode(";",file_get_contents(SERVER_URL.'vistas/contenido/biblioteca.sql'));//
+	//$sql = explode(";",file_get_contents(SERVER_URL.'vistas/contenido/biblioteca.sql'));
+	$sql = explode(";",file_get_contents('../contenido/biblioteca.sql'));
 	//recorremos el arreglo y ejecutamos cada sentencia SQL
 	foreach($sql as $query){
 		//mysqli_query($query,$link);
@@ -48,7 +43,8 @@ if(isset($_POST["ok1"])){
 	// FROM information_schema.`TABLES` WHERE TABLE_TYPE='BASE TABLE' && TABLE_SCHEMA = 'bibliotecanueva'");
 
 	//guardar la informacion en el archivo credenciales.php
-	$fp = fopen("vistas/contenido/XMLCARP/credenciales.php","w+"); //abrimos el archivo para escritura
+	//$fp = fopen("vistas/contenido/XMLCARP/credenciales.php","w+"); //abrimos el archivo para escritura
+	$fp = fopen("../contenido/XMLCARP/credenciales.php","w+"); //abrimos el archivo para escritura
 	
 	$contenido="<?php".PHP_EOL;
 	$contenido.="define(\"SERVIDOR\",\"$ip\");".PHP_EOL;
@@ -59,10 +55,7 @@ if(isset($_POST["ok1"])){
 	
 	fwrite($fp, "$contenido");
 	fclose($fp); //cerramos la conexión y liberamos la memoria
-	//fin archivo credenciales.php
-
-	
-	
+	//fin archivo credenciales.php	
 }
 ?>
 
@@ -74,30 +67,102 @@ if(isset($_POST["ok1"])){
     <title>Instalcion De Base </title>
 
 	<script type="text/javascript">
+         function datoseEnviar(){
+			
+			var toastLiveExample = document.getElementById('liveToast')
+			var toast = new bootstrap.Toast(toastLiveExample)
+	
+       
+        var parametros = {
 
-function toas() {
-  
-  var toastTrigger = document.getElementById('liveToastBtn')
-  var toastLiveExample = document.getElementById('liveToast')
+		
+	            "ip" : document.getElementById("ip").value,
+	            "base" : document.getElementById("base").value,
+	            "usuario" : document.getElementById("user").value,
+	            "clave" : document.getElementById("password").value,
+	            "ok1" : document.getElementById("liveToastBtn").value
+	              
+        };
+        $.ajax({
+                data:  parametros, //datos que se envian a traves de ajax
+                url:   '<?php echo SERVER_URL;?>vistas/contenido/installer-url.php', //archivo que recibe la peticion
+                type:  'post', //método de envio
+                beforeSend: function () {
+                        $("#resultado").html("Procesando, espere por favor...");
+                },
+                success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+                        $("#resultado").html(response);
 
-	  var toast = new bootstrap.Toast(toastLiveExample)
-	  
-	  toast.show()
+						document.getElementById("progre").style.display= "block";
+						document.getElementById("text1").style.display= "block";
 
+						setTimeout(function(){
+							document.getElementById("progre").style.display= "none";
+							document.getElementById("text1").style.display= "none";
+							toast.show()
+                     
+                        },5000);
+						
+                }
+        });
 }
-
   
 
 </script>
 
-	
 
   </head>
   <body>
-	<img src="../contenido/XMLCARP/credenciales.php" alt="">  
+	  
+	<style type="text/css">
+
+		#progre{
+		
+			display: none;
+		}
+		#text1{
+		
+		display: none;
+	}
+	#lodig{
+		height: 100px;
+	}
+	#capa{
+		/* background-color: rgba(15, 84, 214, 0.5); */
+	}
+	.container-fluid{
+		/* opacity: 70%; */
+		
+	}
+	body{
+		/* background-image: url("vistas/paginas/images/fondos/fondo_baseDatos.jpg"); */
+
+	}
+	
+		.preloader {
+  width: 70px;
+  height: 70px;
+  border: 10px solid #eee;
+  border-top: 10px solid #666;
+  border-radius: 50%;
+  animation-name: girar;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+	</style>
 
 	<div class="container-fluid">
-		<div class="row m-5 shadow-lg">
+		<div class="row m-5 shadow-lg" id="capa">
 			<div class="row align-items-center">
 			<div class="col-8 p-2 offset-2">
 				
@@ -151,57 +216,64 @@ function toas() {
 				</div>
 			  </div>
                  
-				  <form method="post" class="row g-3 mb-4">
+				  <form method="post" id="basic-form" class="row g-3 mb-4">
 					<div class="col-6">
 					  <label for="inputAddress" class="form-label">Servidor De Base De Datos</label>
-					  <input type="text" name="ip" class="form-control"  id="validationCustom01" placeholder="localhost" required>
+					  <input type="text" name="ip" class="form-control"  id="ip" placeholder="localhost" required>
 					  <div class="valid-feedback">
 						Hace falta el Servidor
 					  </div>
 					</div>
 					<div class="col-6">
 					  <label for="input2" class="form-label"> Introduzca el nombre de la base de datos </label>
-					  <input type="text" name="base" class="form-control" id="input2" placeholder="Db_nombre" required>
+					  <input type="text" name="base" class="form-control" id="base"  placeholder="Db_nombre" required>
 					</div>
 					<div class="col-md-6">
 					  <label for="input3" class="form-label">Nombre Del Usuario</label>
-					  <input type="text" name="usuario" class="form-control" id="input3" placeholder="root" required>
+					  <input type="text" name="usuario" class="form-control" id="user" placeholder="root" required>
 					</div>
 					<div class="col-md-6">
 						<label for="inputCity" class="form-label">Contraseña</label>
-						<input type="text" name="clave" class="form-control" id="inputCity">
+						<input type="text" name="clave" class="form-control" id="password">
 					  </div>
 					
 					<div class="col-12 text-center">
-						<button type="submit" name="ok1" id="liveToastBtn"  class="btn btn-primary">Crear</button>
+						<button type="button" name="ok1" id="liveToastBtn" onclick="datoseEnviar(); return false;" class="btn btn-primary">Crear</button>
+
 						</div>
+						
+
 					</form>
 
 
 
 				 
 
-<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+<div class="position-fixed bottom-1 end-0 p-3" style="z-index: 11">
   <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-header">
-      <img src="..." class="rounded me-2" alt="...">
-      <strong class="me-auto">Bootstrap</strong>
-      <small>11 mins ago</small>
+      <img src="vistas/paginas/images/iconos/ico-base.png" width="20" height="20" class="rounded me-2" alt="...">
+      <strong class="me-auto">Base de datos</strong>
+      <small><?php echo date("h:i:s"); ?></small>
       <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
-    <div class="toast-body">
-      Hello, world! This is a toast message.
+    <div class="toast-body" id="resultado">
+      
     </div>
   </div>
 </div>
 
-
-
-
-
 			</div>
 		
 		  </div>
+		  <div class="row" id="lodig" >
+			  <div class="col-2 offset-11"  >
+
+				  <div class="preloader" id="progre" >
+				</div>
+				
+				<p class="lead" id="text1">Procesando</p>
+			</div>
 		</div>
 		</div>
 	  </div>
