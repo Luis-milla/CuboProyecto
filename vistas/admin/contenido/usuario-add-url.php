@@ -1,8 +1,3 @@
-<?php
-
-//require ('configuraciones/APP.php');
-?>
-<script>
 <div class="main-panel">        
         <div class="content-wrapper">
           <div class="row">
@@ -80,7 +75,7 @@
                       </div>
                     </div>
                     <button type="submit" class="btn btn-success me-2" id="save">Guardar</button>
-                    <button type="submit" class="btn btn-success me-2">Cancelar</button>
+                    <button type="submit" class="btn btn-success me-2" id="cancel">Cancelar</button>
                     
                     </div>
                     

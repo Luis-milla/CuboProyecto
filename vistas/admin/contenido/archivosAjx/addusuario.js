@@ -1,4 +1,21 @@
 $(document).ready(function(){
+$('#cancel').click(function(){
+    var nombre=$('#nombre').val();
+    var apellido=$('#apellido').val();
+    var cargo=$('#cargo').val();
+    var mail=$('#mail').val();
+    var contra=$('#contra').val();
+    var confirm=$('#confirm').val();
+    var action='save';
+
+    nombre="";
+    apellido="";
+    mail="";
+    confirm="";
+    contra="";
+
+
+});
 
 $('#save').click(function(e){
  e.preventDefault();
@@ -12,26 +29,19 @@ $('#save').click(function(e){
  var action='save';
  if(contra == confirm){
 
-$.ajaxUrl({
-url: '<?php echo SERVER_URL;?>controladores/controladorAdmin.php',
+$.ajax({
+url: '../modelos/utilidadesAdmin.php',
 type: 'POST',
 async: true,
 data:{action:action,nombre: nombre,apellido: apellido,cargo: cargo,mail: mail,contra: contra
 },
 
 success: function(reponse){
-
-    switch(reponse){
-        case 0: alert('No hay conexion');
-        break;
-        default : alert('conecion conexito');
-        break;
-
-    }
-    
+console.log(reponse);    
 },
 error: function(error){
     alert('Sucedio un error al conectar');
+    console.log(error)
 }
 
  });

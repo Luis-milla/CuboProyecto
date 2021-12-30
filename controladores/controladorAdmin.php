@@ -1,16 +1,20 @@
 <?php
 require_once "../modelos/modeloLogin.php";
-
+/*
 if($_POST['action'] == "save"){
     echo 1;
 }
-/*
+*/
 class controladorAdmin extends utilidadesAdmin {
    
    public function registrarusuarios_controlador(){
 
-    if(isset($_POST['action'])){
-        echo "1";
+    if($_POST['action']=="save"){
+ $correo=$_POST['correo'];
+ $clave=$_POST['clave'];
+ $correo=$_POST['correo'];
+ $clave=$_POST['clave'];
+
     }
     /*
     //se resiven las variables post del login
