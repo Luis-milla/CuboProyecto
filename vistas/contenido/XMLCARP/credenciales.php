@@ -2,5 +2,5 @@
 define("SERVIDOR","localhost");
 define("USUARIO","root");
 define("CONTRA","");
-define("BASEDATOS","lsldlflgg");
+define("BASEDATOS","save2");
 ?>
