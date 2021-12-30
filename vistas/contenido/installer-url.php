@@ -1,12 +1,14 @@
 <?php
 
+
+
 if(isset($_POST["ok1"])){
 	//informacion para conectarse con la base de datos
 	
-	echo $ip=$_POST["ip"];
-	echo $usuario=$_POST["usuario"];
+	 $ip=$_POST["ip"];
+	$usuario=$_POST["usuario"];
 	 $clave=$_POST["clave"];
-	echo $base=$_POST["base"];
+	 $base=$_POST["base"];
 	
 	//conexion con el servidor MySQL 
 	$link = mysqli_connect($ip,$usuario,$clave);
@@ -46,7 +48,7 @@ if(isset($_POST["ok1"])){
 	// FROM information_schema.`TABLES` WHERE TABLE_TYPE='BASE TABLE' && TABLE_SCHEMA = 'bibliotecanueva'");
 
 	//guardar la informacion en el archivo credenciales.php
-	$fp = fopen("XMLCARP/credenciales.php","w+"); //abrimos el archivo para escritura
+	$fp = fopen("vistas/contenido/XMLCARP/credenciales.php","w+"); //abrimos el archivo para escritura
 	
 	$contenido="<?php".PHP_EOL;
 	$contenido.="define(\"SERVIDOR\",\"$ip\");".PHP_EOL;
@@ -59,7 +61,7 @@ if(isset($_POST["ok1"])){
 	fclose($fp); //cerramos la conexión y liberamos la memoria
 	//fin archivo credenciales.php
 
-	echo "<h1>PROCESO TERMINADO SE RECOMIENTA<br>ELIMINAR LA CARPETA INSTALL</h1><br>";
+	
 	
 }
 ?>
@@ -98,9 +100,6 @@ function toas() {
 		<div class="row m-5 shadow-lg">
 			<div class="row align-items-center">
 			<div class="col-8 p-2 offset-2">
-				<?php
-                      echo __FILE__;
-				?>
 				
 				<div class="col-10 offset-1 p-2 ">
 				<h1 class="display-4 lead text-center">INTALACION DE BASE DE DATOS</h1>
