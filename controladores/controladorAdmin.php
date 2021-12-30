@@ -1,11 +1,10 @@
 <?php
-if($peticionajax){
 require_once "../modelos/modeloLogin.php";
 
-}else{
-require_once "./modelos/modeloLogin.php";
+if($_POST['action'] == "save"){
+    echo 1;
 }
-
+/*
 class controladorAdmin extends utilidadesAdmin {
    
    public function registrarusuarios_controlador(){
@@ -44,5 +43,5 @@ class controladorAdmin extends utilidadesAdmin {
         }
     
 }
-
+*/
 ?>
