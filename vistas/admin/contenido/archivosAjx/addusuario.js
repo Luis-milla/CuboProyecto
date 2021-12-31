@@ -30,7 +30,7 @@ $('#save').click(function(e){
  if(contra == confirm){
 
 $.ajax({
-url: '../modelos/utilidadesAdmin.php',
+url: '../librerias/crearcuenta.php',
 type: 'POST',
 async: true,
 data:{action:action,nombre: nombre,apellido: apellido,cargo: cargo,mail: mail,contra: contra
