@@ -1,7 +1,7 @@
 <?php
 //require_once "./vistas/contenido/XMLCARP/credenciales.php";
-require_once "vistas/contenido/XMLCARP/credenciales.php";
-require_once "./configuraciones/SERVER.php";
+require_once "../vistas/contenido/XMLCARP/credenciales.php";
+require_once "../configuraciones/SERVER.php";
 /*
 if(true){
 require_once "../configuraciones/SERVER.php";
@@ -42,7 +42,7 @@ $output=base64_encode($output);
 return $output;
 }
 //funcion de desencriptar para claves
-protected static function decryption($string){
+public function decryption($string){
 $key=hash('sha256', SECRET_KEY);
 $iv=substr(hash('sha256', SECRET_IV), 0, 16);
 $output=openssl_decrypt(base64_decode($string), METHOD, $key, 0, $iv);
