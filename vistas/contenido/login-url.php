@@ -38,7 +38,6 @@
 <?php
 
 if(isset($_POST['enviar'])){
-
 require_once '../controladores/controladorLogin.php';
 $ins_login=new controladorLogin();
 echo $ins_login->iniciar_session_controlador();

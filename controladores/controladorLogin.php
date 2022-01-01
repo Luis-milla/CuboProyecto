@@ -1,5 +1,6 @@
 <?php
 require_once "./modelos/modeloLogin.php";
+
 class controladorLogin extends modeloLogin {
    
    public function iniciar_session_controlador(){ 
@@ -17,7 +18,7 @@ class controladorLogin extends modeloLogin {
 
     $respuesta="la clave es: ".$clave."correo: ".$correo;
     $datos_cuenta=modeloLogin::iniciar_session_modelo($datos_login);
-    /*
+    
     if($datos_cuenta->rowCount()==1){
        // $row=$datos_cuenta->fetch();
 
@@ -36,7 +37,7 @@ return header("Location: ".SERVER_URL."admin/home");
         </script>";
 
     }
-   **/    
+      
   
    return $respuesta;
         }

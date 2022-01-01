@@ -67,6 +67,25 @@ if(isset($_POST["ok1"])){
     <title>Instalcion De Base </title>
 
 	<script type="text/javascript">
+
+		$("#ip").keyup(function(){    
+			var ta      =   $("#ip");
+			if(ta==="")    {
+
+				letras      =   ta.val().replace("");
+				ta.val(letras)
+			}      
+		}); 
+
+          function validate() {
+			  
+			//    $('#ip').val();
+
+			//   $('#ip').val().split(' ').length===2  ?  $('#mensaje1').removeClass().addClass('noOk') : $('#mensaje1').removeClass().addClass('ok');
+           
+			  
+		  }
+
          function datoseEnviar(){
 			
 			var toastLiveExample = document.getElementById('liveToast')
@@ -133,6 +152,12 @@ if(isset($_POST["ok1"])){
 	.container-fluid{
 		/* opacity: 70%; */
 		
+	}
+	.ok{
+      display: block;
+	}
+	.noOk{
+		display: none;
 	}
 	body{
 		/* background-image: url("vistas/paginas/images/fondos/fondo_baseDatos.jpg"); */
@@ -219,14 +244,17 @@ if(isset($_POST["ok1"])){
 				  <form method="post" id="basic-form" class="row g-3 mb-4">
 					<div class="col-6">
 					  <label for="inputAddress" class="form-label">Servidor De Base De Datos</label>
-					  <input type="text" name="ip" class="form-control"  id="ip" placeholder="localhost" required>
-					  <div class="valid-feedback">
-						Hace falta el Servidor
+					  <input type="text" name="ip" class="form-control"   id="ip" placeholder="localhost" required>
+					  <div class="valid-feedback mensaje" id="mensaje1">
+						Hace falta el Servidor    
 					  </div>
 					</div>
 					<div class="col-6">
 					  <label for="input2" class="form-label"> Introduzca el nombre de la base de datos </label>
 					  <input type="text" name="base" class="form-control" id="base"  placeholder="Db_nombre" required>
+					  <div class="valid-feedback ">
+						Looks good!
+						</div>
 					</div>
 					<div class="col-md-6">
 					  <label for="input3" class="form-label">Nombre Del Usuario</label>
@@ -238,6 +266,7 @@ if(isset($_POST["ok1"])){
 					  </div>
 					
 					<div class="col-12 text-center">
+						<!-- <button type="button" name="ok1" id="liveToastBtn" onclick="datoseEnviar(); return false;" class="btn btn-primary">Crear</button> -->
 						<button type="button" name="ok1" id="liveToastBtn" onclick="datoseEnviar(); return false;" class="btn btn-primary">Crear</button>
 
 						</div>
@@ -278,11 +307,11 @@ if(isset($_POST["ok1"])){
 		</div>
 	  </div>
 
+	  <script src="js/jquery.slim.min.js"></script>
 	  <script src="js/bootstrap.bundle.min.js"></script>
 	
 	
 
-	  <script src="js/jquery.slim.min.js"></script>
   
   </body>
 </html>
