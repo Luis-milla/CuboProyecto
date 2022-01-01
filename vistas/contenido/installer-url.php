@@ -244,7 +244,7 @@ if(isset($_POST["ok1"])){
 				  <form method="post" id="basic-form" class="row g-3 mb-4">
 					<div class="col-6">
 					  <label for="inputAddress" class="form-label">Servidor De Base De Datos</label>
-					  <input type="text" name="ip" class="form-control" onblur="validate();"  id="ip" placeholder="localhost" required>
+					  <input type="text" name="ip" class="form-control"   id="ip" placeholder="localhost" required>
 					  <div class="valid-feedback mensaje" id="mensaje1">
 						Hace falta el Servidor    
 					  </div>
@@ -267,7 +267,7 @@ if(isset($_POST["ok1"])){
 					
 					<div class="col-12 text-center">
 						<!-- <button type="button" name="ok1" id="liveToastBtn" onclick="datoseEnviar(); return false;" class="btn btn-primary">Crear</button> -->
-						<button type="button" name="ok1" id="liveToastBtn" onclick="validate(); return false;" class="btn btn-primary">Crear</button>
+						<button type="button" name="ok1" id="liveToastBtn" onclick="datoseEnviar(); return false;" class="btn btn-primary">Crear</button>
 
 						</div>
 						
