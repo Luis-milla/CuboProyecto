@@ -38,11 +38,11 @@ data:{action:action,nombre: nombre,apellido: apellido,cargo: cargo,mail: mail,co
 
 success: function(reponse){
     if(reponse=="204"){
-     nombre="";
-     apellido="";
-     mail="";
-     confirm="";
-     contra="";
+     nombre.innerHTML("");
+     apellido=replace(nombre,'');
+     mail=replace(mail,'');
+     confirm=replace(confirm,'');
+     contra=replace(contra,'');
     }else{
         alert(reponse);
     }
@@ -50,7 +50,7 @@ success: function(reponse){
 //console.log(reponse);    
 },
 error: function(error){
-    alert('Sucedio un error al conectar');
+    alert('Sucedio un error al conectar'+error);
     console.log(error)
 }
 
