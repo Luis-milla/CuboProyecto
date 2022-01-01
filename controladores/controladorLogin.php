@@ -1,10 +1,6 @@
 <?php
-if($peticionajax){
-require_once "../modelos/modeloLogin.php";
 
-}else{
-require_once "./modelos/modeloLogin.php";
-}
+require_once "../modelos/modeloLogin.php";
 
 class controladorLogin extends modeloLogin {
    
