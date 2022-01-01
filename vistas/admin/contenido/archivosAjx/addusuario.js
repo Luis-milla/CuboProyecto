@@ -30,17 +30,27 @@ $('#save').click(function(e){
  if(contra == confirm){
 
 $.ajax({
-url: '../librerias/crearcuenta.php',
+url: '../admin_libreria/crearcuenta.php',
 type: 'POST',
 async: true,
 data:{action:action,nombre: nombre,apellido: apellido,cargo: cargo,mail: mail,contra: contra
 },
 
 success: function(reponse){
-console.log(reponse);    
+    if(reponse=="204"){
+     nombre.innerHTML("");
+     apellido=replace(nombre,'');
+     mail=replace(mail,'');
+     confirm=replace(confirm,'');
+     contra=replace(contra,'');
+    }else{
+        alert(reponse);
+    }
+
+//console.log(reponse);    
 },
 error: function(error){
-    alert('Sucedio un error al conectar');
+    alert('Sucedio un error al conectar'+error);
     console.log(error)
 }
 

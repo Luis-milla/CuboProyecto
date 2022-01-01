@@ -1,11 +1,9 @@
 <?php
-
-require_once "../modelos/modeloLogin.php";
+require_once "./modelos/modeloLogin.php";
 
 class controladorLogin extends modeloLogin {
    
-   public function iniciar_session_controlador(){
-    
+   public function iniciar_session_controlador(){ 
     //se resiven las variables post del login
     $correo=$_POST['correo'];
     $clave=$_POST['clave'];
@@ -18,15 +16,18 @@ class controladorLogin extends modeloLogin {
         "clave"=>$clave
     ];
 
+    $respuesta="la clave es: ".$clave."correo: ".$correo;
     $datos_cuenta=modeloLogin::iniciar_session_modelo($datos_login);
+    
     if($datos_cuenta->rowCount()==1){
-        $row=$datos_cuenta->fetch();
+       // $row=$datos_cuenta->fetch();
 
         //esta session se evaluara en el login para que pueda pasar
-        session_start(['name'=>'BB']);
-        $_SESSION['id']=$row['id'];
-        $_SESSION['nombre']=$row['nombre'];
+       // session_start(['name'=>'BB']);
+       // $_SESSION['id']=$row['id'];
+       // $_SESSION['nombre']=$row['nombre'];
         //si returna 1 columna esta sera la ruta
+        
 return header("Location: ".SERVER_URL."admin/home");
  
     }else{
@@ -36,8 +37,9 @@ return header("Location: ".SERVER_URL."admin/home");
         </script>";
 
     }
-       
-        
+      
+  
+   return $respuesta;
         }
     
 }

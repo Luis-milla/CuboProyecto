@@ -2,5 +2,5 @@
 define("SERVIDOR","localhost");
 define("USUARIO","root");
 define("CONTRA","");
-define("BASEDATOS","angel");
+define("BASEDATOS","biblioteca");
 ?>
