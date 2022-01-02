@@ -1,28 +1,26 @@
 
+
+
  <!-- Bootstrap CSS -->
    
-	<!-- <link rel="stylesheet" href="vistas/contenido/css/bootstrap.min.css"> -->
-	<link rel="stylesheet" href="vistas/paginas/instaler/css/bootstrap.min.css">
-	<link rel="stylesheet" href="vistas/paginas/instaler/css/style.css">
-	
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/estilo.css">
     <title>Instalcion De Base </title>
-
-<script src="vistas/paginas/instaler/js/procesosYvalidaciones.js"></script>
-
 
   </head>
   <body>
-	<div class="container-fluid">
+	  
+<div class="container-fluid">
 		<div class="row m-5 shadow-lg" id="capa">
 			<div class="row align-items-center">
 			<div class="col-8 p-2 offset-2">
 				
-				<div class="col-md-10 offset-1 p-2 ">
+				<div class="col-10 offset-1 p-2 ">
 				<h1 class="display-4 lead text-center">INTALACION DE BASE DE DATOS</h1>
 			</div>
 			<!-- <hr> -->
 				
-			<div class="col-md-12" >
+			<div class="col-12" >
 
 				<div class="card mb-3">
 				  <div class="row g-0 m-3">
@@ -68,14 +66,14 @@
 			  </div>
                  
 				  <form method="post" id="basic-form" class="row g-3 mb-4">
-					<div class="col-md-6">
+					<div class="col-6">
 					  <label for="inputAddress" class="form-label">Servidor De Base De Datos</label>
 					  <input type="text" name="ip" class="form-control"   id="ip" placeholder="localhost" required>
 					  <div class="valid-feedback mensaje" id="mensaje1">
 						Hace falta el Servidor    
 					  </div>
 					</div>
-					<div class="col-md-6">
+					<div class="col-6">
 					  <label for="input2" class="form-label"> Introduzca el nombre de la base de datos </label>
 					  <input type="text" name="base" class="form-control" id="base"  placeholder="Db_nombre" required>
 					  <div class="valid-feedback ">
@@ -104,7 +102,7 @@
 
 				 
 
-<div class="position-fixed bottom-1 end-0 " style="z-index: 11">
+<div class="position-fixed bottom-1 end-0 p-3" style="z-index: 11">
   <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-header">
       <img src="vistas/paginas/images/iconos/ico-base.png" width="20" height="20" class="rounded me-2" alt="...">
@@ -122,7 +120,7 @@
 		
 		  </div>
 		  <div class="row" id="lodig" >
-			  <div class="col-md-2 offset-11"  >
+			  <div class="col-2 offset-11"  >
 
 				  <div class="preloader" id="progre" >
 				</div>
@@ -133,11 +131,12 @@
 		</div>
 	  </div>
 
-	  <!-- <script src="js/jquery.slim.min.js"></script>
-	  <script src="js/bootstrap.bundle.min.js"></script> -->
-	
+	  <script src="js/jquery.slim.min.js"></script>
+	  <script src="js/bootstrap.bundle.min.js"></script>
+	  <script src="js/scriptfun.js"></script> 
 	
 
   
   </body>
-</html>
+
+  </html>
