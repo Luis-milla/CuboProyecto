@@ -12,16 +12,15 @@ $mail=$_POST["mail"];
 $contra=$_POST["contra"];
 
 $estado="A";
-$fecha = date('m-d-Y', time());  
+$fecha = date('Y/m/d', time());  
 //echo "The current date and time in Amsterdam are $DateAndTime.\n";
 //date_default_timezone_set('America/Toronto');    
-//$DateAndTime2 = date('h:i:s a', time());
+$DateAndTime2 = date('h:i:s a', time());
 
 $encript = new  Principal();
 $clave=$encript->encryption($contra);
 
-$utilidadesAdmin = new utilidadesAdmin();
-$datos_login=[
+$datos_form=[
     "nombre"=>$nombre,
     "apellido"=>$apellido,
     "estado"=>$estado,
@@ -31,7 +30,16 @@ $datos_login=[
     "correo"=>$mail
 ];
 
- echo "hora: ".$DateAndTime."fecha: ".$DateAndTime2;
+$utilidadesAdmin = new utilidadesAdmin();
+$datos_regis=$utilidadesAdmin->agregar_usuario_modelo($datos_form);
+
+if($datos_regis->rowCount()==1){
+echo "204";
+}else{
+echo "no se ha podido insertar";
+}
+//echo "hora: ".$DateAndTime."fecha: ".$DateAndTime2;
+
 }else{
     echo "Error el nombre de la variable";
 }
