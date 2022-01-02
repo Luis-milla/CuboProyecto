@@ -1,13 +1,8 @@
 <?php
 //require_once "./vistas/contenido/XMLCARP/credenciales.php";
-require_once "../vistas/contenido/XMLCARP/credenciales.php";
-require_once "../configuraciones/SERVER.php";
-/*
-if(true){
-require_once "../configuraciones/SERVER.php";
-}else{
-require_once "./configuraciones/SERVER.php";}
-*/
+require_once "vistas/contenido/XMLCARP/credenciales.php";
+require_once "configuraciones/SERVER.php";
+
 
 class Principal {
 //conexion a la base de datos
