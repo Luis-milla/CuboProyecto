@@ -1,7 +1,6 @@
 
  <!-- Bootstrap CSS -->
    
-	<!-- <link rel="stylesheet" href="vistas/contenido/css/bootstrap.min.css"> -->
 	<link rel="stylesheet" href="vistas/paginas/instaler/css/bootstrap.min.css">
 	<link rel="stylesheet" href="vistas/paginas/instaler/css/style.css">
 	
@@ -20,8 +19,6 @@
 				<div class="col-md-10 offset-1 p-2 ">
 				<h1 class="display-4 lead text-center">INTALACION DE BASE DE DATOS</h1>
 			</div>
-			<!-- <hr> -->
-				
 			<div class="col-md-12" >
 
 				<div class="card mb-3">
@@ -92,7 +89,7 @@
 					  </div>
 					
 					<div class="col-12 text-center">
-						<!-- <button type="button" name="ok1" id="liveToastBtn" onclick="datoseEnviar(); return false;" class="btn btn-primary">Crear</button> -->
+				
 						<button type="button" name="ok1" id="liveToastBtn" onclick="datoseEnviar(); return false;" class="btn btn-primary">Crear</button>
 
 						</div>
@@ -132,12 +129,3 @@
 		</div>
 		</div>
 	  </div>
-
-	  <!-- <script src="js/jquery.slim.min.js"></script>
-	  <script src="js/bootstrap.bundle.min.js"></script> -->
-	
-	
-
-  
-  </body>
-</html>

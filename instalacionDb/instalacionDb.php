@@ -44,7 +44,7 @@ if(isset($_POST["ok1"])){
 
 	//guardar la informacion en el archivo credenciales.php
 	//$fp = fopen("vistas/contenido/XMLCARP/credenciales.php","w+"); //abrimos el archivo para escritura
-	$fp = fopen("../contenido/XMLCARP/credenciales.php","w+"); //abrimos el archivo para escritura
+	$fp = fopen("../vistas/contenido/XMLCARP/credenciales.php","w+"); //abrimos el archivo para escritura
 	
 	$contenido="<?php".PHP_EOL;
 	$contenido.="define(\"SERVIDOR\",\"$ip\");".PHP_EOL;
