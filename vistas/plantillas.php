@@ -28,7 +28,7 @@ switch($vista){
 
 case "installer": 
      if(file_exists("./vistas/contenido/".$vista."-url.php")){
-       require_once "./vistas/contenido/".$vista."-url.php";
+       require_once "./vistas/contenido/installer3-url.php";
       }else{
            // $vista="login";
        require_once "./vistas/contenido/login-url.php";
