@@ -5,10 +5,10 @@
             <div class="col-12 grid-margin">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Agregar Libro</h4>
+                  <h4 class="card-title">Crear cuenta</h4>
                   <form autocomplete="" id="form_add" class="form-sample">
                     <p class="card-description">
-                      Informacion necesaria del libro
+                      Personal info
                     </p>
                     <div class="row">
                       <div class="col-md-6">
@@ -74,7 +74,7 @@
                         </div>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-success me-2" id="save">Agregar</button>
+                    <button type="submit" class="btn btn-success me-2" id="save">Guardar</button>
                     <button type="submit" class="btn btn-success me-2" id="cancel">Cancelar</button>
                     
                     </div>
@@ -86,4 +86,4 @@
           </div>
         </div>
         <!--Aqui se van a filtrarlos datos -->
-        <script src="<?php echo SERVER_URL;?>></script>
+        <script src="<?php echo SERVER_URL;?>vistas/admin/contenido/archivosAjx/addusuario.js"></script>
