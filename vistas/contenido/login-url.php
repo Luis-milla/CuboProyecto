@@ -49,4 +49,4 @@ if(isset($_POST["enviar"])){
 }
 
   ?>
- <!--<script src="<?php echo SERVER_URL;?>vistas/contenido/ajaxJSLogin/verificacion.js"></script> -->
+ 
