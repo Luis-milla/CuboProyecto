@@ -1,9 +1,18 @@
 
  <!-- Bootstrap CSS -->
    
+<<<<<<< HEAD
  <link rel="stylesheet" href="vistas/contenido/css/bootstrap.min.css">
 	<link rel="stylesheet" href="vistas/contenido/css/sweetalert2.css">
 	<link rel="stylesheet" href="vistas/contenido/css/sweetalert2.min.css">
+=======
+	<link rel="stylesheet" href="vistas/paginas/instaler/css/bootstrap.min.css">
+	<link rel="stylesheet" href="vistas/paginas/instaler/css/style.css">
+	
+    <title>Instalcion De Base </title>
+
+<script src="vistas/paginas/instaler/js/procesosYvalidaciones.js"></script>
+>>>>>>> main
 
 
 	<div class="container-fluid">
@@ -14,9 +23,13 @@
 				<div class="col-10 offset-1 p-2 ">
 				<h1 class="display-4 lead text-center">INTALACION DE BASE DE DATOS</h1>
 			</div>
+<<<<<<< HEAD
 			<!-- <hr> -->
 				
 			<div class="col-12" >
+=======
+			<div class="col-md-12" >
+>>>>>>> main
 
 				<div class="card mb-3">
 				  <div class="row g-0 m-3">
@@ -86,7 +99,15 @@
 					  </div>
 					
 					<div class="col-12 text-center">
+<<<<<<< HEAD
 						<button type="button" id="enviar" class="btn btn-primary">Crear</button>
+=======
+				
+						<button type="button" name="ok1" id="liveToastBtn" onclick="datoseEnviar(); return false;" class="btn btn-primary">Crear</button>
+
+						</div>
+						
+>>>>>>> main
 
 						</div>		
 					</form>
@@ -97,9 +118,12 @@
 
 		</div>
 	  </div>
+<<<<<<< HEAD
       <script src="vistas/contenido/ajaxJSLogin/verificacion.js"></script>
 	  <script src="vistas/contenido/js/sweetalert2.all.min.js"></script>
 	  <script src="vistas/contenido/js/sweetalert2.all.js"></script>
 	  <script src="vistas/contenido/js/jquery.slim.min.js"></script>
 	  <script src="vistas/contenido/js/bootstrap.bundle.min.js"></script>
 	
+=======
+>>>>>>> main
