@@ -5,24 +5,25 @@
         <div class="row w-100 mx-0">
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-              <div class="brand-logo">
-                <img src="<?php echo SERVER_URL;?>vistas/paginas/images/logo.svg" alt="logo">
+            
+              <div class="brand-logo col-lg-4 mx-auto" >
+                <img src="<?php echo SERVER_URL;?>imagenes/logo.png" alt="logo">
               </div>
-              <h4>Hello! let's get started</h4>
-              <h6 class="fw-light">Sign in to continue.</h6>
-              <form class="pt-3" method="post">
+
+              <h4>Bienvenido a biblioteca</h4>
+               <form class="pt-3" method="post">
                 <div class="form-group">
                   <input type="email" class="form-control form-control-lg" 
-                   placeholder="Username" name="correo">
+                   placeholder="correo..." name="correo">
                 </div>
                 <div class="form-group">
                   <input type="password" class="form-control form-control-lg" 
-                   placeholder="Password" name="clave">
+                   placeholder="contraseña" name="clave">
                 </div>
                 <div class="mt-3">
-                  <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" 
+                  <button type="submit" class="btn btn-block  btn-dark font-weight-medium auth-form-btn" 
                   name="enviar">
-                  SIGN IN
+                  
                   </button> 
                
                 </div>
