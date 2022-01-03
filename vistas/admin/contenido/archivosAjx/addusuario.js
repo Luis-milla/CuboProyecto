@@ -17,8 +17,8 @@ $('#cancel').click(function(){
 
 });
 
-$('#save').click(function(e){
- e.preventDefault();
+$('#save').click(function(){
+ //e.preventDefault();
 
  var nombre=$('#nombre').val();
  var apellido=$('#apellido').val();
@@ -38,8 +38,8 @@ data:{action:action,nombre: nombre,apellido: apellido,cargo: cargo,mail: mail,co
 
 success: function(reponse){
     if(reponse=="204"){
-     nombre.innerHTML("");
-     apellido=replace(nombre,'');
+     nombre=replace(nombre,'');
+     apellido=replace(apellido,'');
      mail=replace(mail,'');
      confirm=replace(confirm,'');
      contra=replace(contra,'');
