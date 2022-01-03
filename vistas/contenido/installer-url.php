@@ -1,28 +1,22 @@
 
  <!-- Bootstrap CSS -->
    
-	<!-- <link rel="stylesheet" href="vistas/contenido/css/bootstrap.min.css"> -->
-	<link rel="stylesheet" href="vistas/paginas/instaler/css/bootstrap.min.css">
-	<link rel="stylesheet" href="vistas/paginas/instaler/css/style.css">
-	
-    <title>Instalcion De Base </title>
-
-<script src="vistas/paginas/instaler/js/procesosYvalidaciones.js"></script>
+ <link rel="stylesheet" href="vistas/contenido/css/bootstrap.min.css">
+	<link rel="stylesheet" href="vistas/contenido/css/sweetalert2.css">
+	<link rel="stylesheet" href="vistas/contenido/css/sweetalert2.min.css">
 
 
-  </head>
-  <body>
 	<div class="container-fluid">
 		<div class="row m-5 shadow-lg" id="capa">
 			<div class="row align-items-center">
 			<div class="col-8 p-2 offset-2">
 				
-				<div class="col-md-10 offset-1 p-2 ">
+				<div class="col-10 offset-1 p-2 ">
 				<h1 class="display-4 lead text-center">INTALACION DE BASE DE DATOS</h1>
 			</div>
 			<!-- <hr> -->
 				
-			<div class="col-md-12" >
+			<div class="col-12" >
 
 				<div class="card mb-3">
 				  <div class="row g-0 m-3">
@@ -67,77 +61,45 @@
 				</div>
 			  </div>
                  
-				  <form method="post" id="basic-form" class="row g-3 mb-4">
-					<div class="col-md-6">
+				  <form method="post" class="row g-3 mb-4" id="cargar">
+					<div class="col-6">
 					  <label for="inputAddress" class="form-label">Servidor De Base De Datos</label>
-					  <input type="text" name="ip" class="form-control"   id="ip" placeholder="localhost" required>
-					  <div class="valid-feedback mensaje" id="mensaje1">
+					  <input type="text" class="form-control" name="ip" id="ip" placeholder="localhost">
+					  <div class="valid-feedback mensaje" >
 						Hace falta el Servidor    
 					  </div>
 					</div>
-					<div class="col-md-6">
+					<div class="col-6">
 					  <label for="input2" class="form-label"> Introduzca el nombre de la base de datos </label>
-					  <input type="text" name="base" class="form-control" id="base"  placeholder="Db_nombre" required>
+					  <input type="text" class="form-control" id="base"  placeholder="Db_nombre">
 					  <div class="valid-feedback ">
 						Looks good!
 						</div>
 					</div>
 					<div class="col-md-6">
 					  <label for="input3" class="form-label">Nombre Del Usuario</label>
-					  <input type="text" name="usuario" class="form-control" id="user" placeholder="root" required>
+					  <input type="text" class="form-control" id="user" placeholder="root">
 					</div>
 					<div class="col-md-6">
 						<label for="inputCity" class="form-label">Contraseña</label>
-						<input type="text" name="clave" class="form-control" id="password">
+						<input type="text" class="form-control" id="clave">
 					  </div>
 					
 					<div class="col-12 text-center">
-						<!-- <button type="button" name="ok1" id="liveToastBtn" onclick="datoseEnviar(); return false;" class="btn btn-primary">Crear</button> -->
-						<button type="button" name="ok1" id="liveToastBtn" onclick="datoseEnviar(); return false;" class="btn btn-primary">Crear</button>
+						<button type="button" id="enviar" class="btn btn-primary">Crear</button>
 
-						</div>
-						
-
+						</div>		
 					</form>
-
-
-
-				 
-
-<div class="position-fixed bottom-1 end-0 " style="z-index: 11">
-  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header">
-      <img src="vistas/paginas/images/iconos/ico-base.png" width="20" height="20" class="rounded me-2" alt="...">
-      <strong class="me-auto">Base de datos</strong>
-      <small><?php echo date("h:i:s"); ?></small>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-    </div>
-    <div class="toast-body" id="resultado">
-      
-    </div>
-  </div>
-</div>
 
 			</div>
 		
-		  </div>
-		  <div class="row" id="lodig" >
-			  <div class="col-md-2 offset-11"  >
+</div>
 
-				  <div class="preloader" id="progre" >
-				</div>
-				
-				<p class="lead" id="text1">Procesando</p>
-			</div>
-		</div>
 		</div>
 	  </div>
-
-	  <!-- <script src="js/jquery.slim.min.js"></script>
-	  <script src="js/bootstrap.bundle.min.js"></script> -->
+      <script src="vistas/contenido/ajaxJSLogin/verificacion.js"></script>
+	  <script src="vistas/contenido/js/sweetalert2.all.min.js"></script>
+	  <script src="vistas/contenido/js/sweetalert2.all.js"></script>
+	  <script src="vistas/contenido/js/jquery.slim.min.js"></script>
+	  <script src="vistas/contenido/js/bootstrap.bundle.min.js"></script>
 	
-	
-
-  
-  </body>
-</html>

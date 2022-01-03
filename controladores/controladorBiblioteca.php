@@ -1,41 +1,54 @@
 <?php
-require_once "../modelos/modeloLogin.php";
+if(isset($_POST["action"])){
+	 $ip=$_POST["ip"];
+	 $usuario=$_POST["host"];
+	 $clave=$_POST["clave"];
+	 $base=$_POST["namebase"];
+	
+	//creacion de la base de datos
+//	$sql = "CREATE DATABASE IF NOT EXISTS ".$base;
+//if ($link->query($sql) === TRUE) {
+//		printf("Proceso terminado.\n");
+//	}
 
+	//seleccionamos la base  de datos
+//	@$link->select_db($base);
 
-class controladorBiblioteca extends modeloBiblioteca {
-   
-   public function iniciar_session_controlador(){
-    
-    //se resiven las variables post del login
-    $correo=$_POST['correo'];
-    $clave=$_POST['clave'];
+	//creamos un array con el contenido del archivo mibase.sql
+	//que tiene los comandos SQL para crear todas las tablas
+	//de la base de datos
+	
+	//*******IMPORTANTE*******// 
+	//en el archivo SQL no se debe de incluir las lineas para la
+	//creacion de la base de datos y el uso de esta.
+	//$sql = explode(";",file_get_contents(SERVER_URL.'vistas/contenido/biblioteca.sql'));
 
-    //proceso de encriptado
-    $usuario=Principal::encryption($clave);
+//	$sql = explode(";",file_get_contents('../contenido/biblioteca.sql'));
+	//recorremos el arreglo y ejecutamos cada sentencia SQL
+//	foreach($sql as $query){
+		//mysqli_query($query,$link);
+//		if ($link->query($query) === TRUE) {
+			
+//		}
+//	}
 
-    $datos_login=[
-        "correo"=>$correo,
-        "clave"=>$clave
-    ];
+	// echo $y=$link->query("SELECT table_name ,table_type
+	// FROM information_schema.`TABLES` WHERE TABLE_TYPE='BASE TABLE' && TABLE_SCHEMA = 'bibliotecanueva'");
 
-    $datos_cuenta=modeloLogin::iniciar_session_modelo($datos_login);
-    if($datos_cuenta->rowCount()==1){
-        $row=$datos_cuenta->fetch();
-
-        //si returna 1 columna esta sera la ruta
-return header("Location: ".SERVER_URL."admin/home");
- 
-    }else{
-        //caso contrario se muestra este mensaje en login
-        echo "<script>
-        alert('El usuario no existe')
-        </script>";
-
-    }
-       
-        
-        }
-    
+	//guardar la informacion en el archivo credenciales.php
+	//$fp = fopen("vistas/contenido/XMLCARP/credenciales.php","w+"); //abrimos el archivo para escritura
+$fp = fopen("../contenido/XMLCARP/credenciales.php","a"); //abrimos el archivo para escritura
+	
+	$contenido="<?php".PHP_EOL;
+	$contenido.="define(\"SERVIDOR\",\"$ip\");".PHP_EOL;
+	$contenido.="define(\"USUARIO\",\"$usuario\");".PHP_EOL;
+	$contenido.="define(\"CONTRA\",\"$clave\");".PHP_EOL;
+	$contenido.="define(\"BASEDATOS\",\"$base\");".PHP_EOL;
+	$contenido.="?>";
+	
+fwrite($fp, $contenido);
+fclose($fp); //cerramos la conexión y liberamos la memoria
+	//fin archivo credenciales.php	
 }
 
 ?>

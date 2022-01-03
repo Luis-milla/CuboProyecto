@@ -15,7 +15,7 @@ $estado="A";
 $fecha = date('Y/m/d', time());  
 //echo "The current date and time in Amsterdam are $DateAndTime.\n";
 //date_default_timezone_set('America/Toronto');    
-$DateAndTime2 = date('h:i:s a', time());
+//$DateAndTime2 = date('h:i:s a', time());
 
 $encript = new  Principal();
 $clave=$encript->encryption($contra);

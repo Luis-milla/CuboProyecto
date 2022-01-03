@@ -1,6 +1,6 @@
 <?php
 //require_once "./vistas/contenido/XMLCARP/credenciales.php";
-require_once "vistas/contenido/XMLCARP/credenciales.php";
+require_once "configuraciones/credenciales.php";
 require_once "configuraciones/SERVER.php";
 
 
