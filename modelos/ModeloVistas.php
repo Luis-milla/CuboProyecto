@@ -18,7 +18,7 @@ class ModeloVistas {
                 }
 
             }elseif($tipo=="usuario"){
-                $listaVistas=["home","lista-client","libro-add"];
+                $listaVistas=["home","lista-client","libro-add","usuario-perfil"];
                 if(in_array($vistas,$listaVistas)){
                  $contenido='./vistas/alumno/contenido/'.$vistas.'-url.php';
                    

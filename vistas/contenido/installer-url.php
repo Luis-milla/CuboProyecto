@@ -62,28 +62,28 @@
 				</div>
 			  </div>
                  
-				  <form method="post" class="row g-3 mb-4" id="cargar">
+				  <form method="post" class="row g-3 mb-4" id="cargar" onsubmit="retur validar();">
 					<div class="col-6">
 					  <label for="inputAddress" class="form-label">Servidor De Base De Datos</label>
-					  <input type="text" class="form-control" name="ip" id="ip" placeholder="localhost">
+					  <input type="text" class="form-control" name="ip" id="ip" placeholder="localhost" >
 					  <div class="valid-feedback mensaje" >
 						Hace falta el Servidor    
 					  </div>
 					</div>
 					<div class="col-6">
 					  <label for="input2" class="form-label"> Introduzca el nombre de la base de datos </label>
-					  <input type="text" class="form-control" id="base"  placeholder="Db_nombre">
+					  <input type="text" class="form-control" id="base"  placeholder="Db_nombre" > 
 					  <div class="valid-feedback ">
 						Looks good!
 						</div>
 					</div>
 					<div class="col-md-6">
 					  <label for="input3" class="form-label">Nombre Del Usuario</label>
-					  <input type="text" class="form-control" id="user" placeholder="root">
+					  <input type="text" class="form-control" id="user" placeholder="root" >
 					</div>
 					<div class="col-md-6">
 						<label for="inputCity" class="form-label">Contraseña</label>
-						<input type="text" class="form-control" id="clave">
+						<input type="text" class="form-control" id="clave" >
 					  </div>
 					
 					<div class="col-12 text-center">
@@ -98,7 +98,9 @@
 
 		</div>
 	  </div>
-      <script src="vistas/contenido/ajaxJSLogin/verificacion.js"></script>
+
+      <!-- <script src="vistas/contenido/ajaxJSLogin/verificacion.js"></script> -->
+	  <script src="vistas/contenido/ajaxJSLogin/validacion.js"></script>
 	  <script src="vistas/contenido/js/sweetalert2.all.min.js"></script>
 	  <script src="vistas/contenido/js/sweetalert2.all.js"></script>
 	  <script src="vistas/contenido/js/jquery.slim.min.js"></script>
